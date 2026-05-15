@@ -39,7 +39,7 @@ editDtmScene.enter(async (ctx) => {
       break;
     case 'answers':
       await ctx.reply(
-        `Hozirgi to'g'ri javoblar: <code>${dtm.correct_answers}</code>\n\nYangi javoblarni kiriting (${dtm.question_count} ta a/b/c/d):`,
+        `Hozirgi to'g'ri javoblar: <code>${dtm.correct_answers}</code>\n\nYangi javoblarni kiriting (${dtm.question_count} ta lotin kichik harfi):`,
         { parse_mode: 'HTML', ...cancelKeyboard() }
       );
       break;
@@ -102,7 +102,7 @@ editDtmScene.on(['text', 'document'], async (ctx) => {
       const parsed = parseAnswers(text, dtm.question_count);
       if (!parsed) {
         await ctx.reply(
-          `❌ Javoblar noto'g'ri formatda. Aniq <b>${dtm.question_count}</b> ta a/b/c/d harfi kerak.`,
+          `❌ Javoblar noto'g'ri formatda. Aniq <b>${dtm.question_count}</b> ta lotin kichik harfi kerak.`,
           { parse_mode: 'HTML' }
         );
         return;

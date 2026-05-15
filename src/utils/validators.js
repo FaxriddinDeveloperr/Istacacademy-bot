@@ -44,14 +44,9 @@ function parseAnswers(raw, expectedCount) {
   // Eslatma: bu yondashuv juda oddiy — har bir harf javob deb qabul qilinadi
   const letters = cleaned.replace(/\d+/g, '');
 
-  // Faqat a-d harflari bo'lishi shart
-  if (!/^[a-d]+$/.test(letters)) return null;
+  // Faqat lotin kichik harflari bo'lishi shart (a..z)
+  if (!/^[a-z]+$/.test(letters)) return null;
   if (letters.length !== expectedCount) return null;
-
-  // Har bir harfning a..d ekanligini qayta tekshirish (paranoid)
-  for (const ch of letters) {
-    if (!VALID_ANSWER_LETTERS.includes(ch)) return null;
-  }
   return letters;
 }
 

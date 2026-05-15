@@ -43,7 +43,7 @@ editTaskScene.enter(async (ctx) => {
     case 'answers':
       await ctx.reply(
         `Hozirgi to'g'ri javoblar: <code>${task.correct_answers}</code>\n\n` +
-          `Yangi javoblarni kiriting (${task.question_count} ta a/b/c/d):`,
+          `Yangi javoblarni kiriting (${task.question_count} ta lotin kichik harfi):`,
         { parse_mode: 'HTML', ...cancelKeyboard() }
       );
       break;
@@ -108,7 +108,7 @@ editTaskScene.on(['text', 'document'], async (ctx) => {
       const parsed = parseAnswers(text, task.question_count);
       if (!parsed) {
         await ctx.reply(
-          `❌ Javoblar noto'g'ri formatda. Aniq <b>${task.question_count}</b> ta a/b/c/d harfi kerak.`,
+          `❌ Javoblar noto'g'ri formatda. Aniq <b>${task.question_count}</b> ta lotin kichik harfi kerak.`,
           { parse_mode: 'HTML' }
         );
         return;

@@ -27,9 +27,9 @@ dtmAnswerScene.enter(async (ctx) => {
   await ctx.reply(
     `📋 Bu variantda <b>${dtm.question_count}</b> ta savol bor.\n\n` +
       `Javoblaringizni quyidagi formatda yuboring:\n` +
-      `Misol: <code>abcda</code> (5 ta savol uchun)\n` +
-      `Yoki: <code>1a2b3c4d5a</code>\n\n` +
-      `❗️ Faqat a, b, c, d harflari ishlatiladi.`,
+      `Misol: <code>abcde</code> (5 ta savol uchun)\n` +
+      `Yoki: <code>1a2b3c4d5e</code>\n\n` +
+      `❗️ Faqat lotin kichik harflari (a, b, c, d, e, ...).`,
     { parse_mode: 'HTML', ...cancelKeyboard() }
   );
 });
@@ -57,7 +57,7 @@ dtmAnswerScene.on('text', async (ctx) => {
     if (!parsed) {
       await ctx.reply(
         `❌ Javob noto'g'ri formatda.\n\n` +
-          `Faqat <b>${fresh.question_count}</b> ta a/b/c/d harfini kiriting.\n` +
+          `Aniq <b>${fresh.question_count}</b> ta lotin kichik harfini kiriting.\n` +
           `Misol: <code>${'a'.repeat(fresh.question_count)}</code>`,
         { parse_mode: 'HTML' }
       );

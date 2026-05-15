@@ -46,8 +46,8 @@ const RESULT_TYPE = {
   DTM: 'dtm',
 };
 
-// To'g'ri javob harflari
-const VALID_ANSWER_LETTERS = ['a', 'b', 'c', 'd'];
+// To'g'ri javob harflari (a..z — barcha kichik harflar qabul qilinadi)
+const VALID_ANSWER_LETTERS = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
 module.exports = {
   MENU,

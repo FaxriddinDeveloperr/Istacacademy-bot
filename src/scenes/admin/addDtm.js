@@ -84,7 +84,7 @@ const addDtmScene = new Scenes.WizardScene(
     }
     ctx.wizard.state.questionCount = Number(text);
     await ctx.reply(
-      `🔤 To'g'ri javoblarni kiriting (${ctx.wizard.state.questionCount} ta harf, faqat a/b/c/d):`,
+      `🔤 To'g'ri javoblarni kiriting (${ctx.wizard.state.questionCount} ta lotin kichik harfi):`,
       cancelKeyboard()
     );
     return ctx.wizard.next();
@@ -100,7 +100,7 @@ const addDtmScene = new Scenes.WizardScene(
     const parsed = parseAnswers(text, ctx.wizard.state.questionCount);
     if (!parsed) {
       await ctx.reply(
-        `❌ Javoblar noto'g'ri formatda. Aniq <b>${ctx.wizard.state.questionCount}</b> ta a/b/c/d harfi kerak.`,
+        `❌ Javoblar noto'g'ri formatda. Aniq <b>${ctx.wizard.state.questionCount}</b> ta lotin kichik harfi kerak.`,
         { parse_mode: 'HTML' }
       );
       return;
